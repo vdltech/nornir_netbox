@@ -125,7 +125,7 @@ class TestNetBoxInventory2(TestNBInventory):
             requests_mock, self.plugin, False, version, use_platform_napalm_driver=True
         )
         with open(
-            f"{BASE_PATH}/{self.plugin.__name__}/{version}/expected_use_platform_napalm_driver.json",
+            f"{BASE_PATH}/{self.plugin.__name__}/{version}/expected_use_platform_napalm_driver.json",  # noqa: E501
             "r",
         ) as f:
             expected = json.load(f)
@@ -135,7 +135,7 @@ class TestNetBoxInventory2(TestNBInventory):
     def test_inventory_multiple_platform_sources_raises_exception(
         self, requests_mock, version
     ):
-        with pytest.raises(ValueError) as e_info:
+        with pytest.raises(ValueError):
             inv = get_inv(
                 requests_mock,
                 self.plugin,
@@ -144,3 +144,4 @@ class TestNetBoxInventory2(TestNBInventory):
                 use_platform_slug=True,
                 use_platform_napalm_driver=True,
             )
+            assert inv
