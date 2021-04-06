@@ -12,11 +12,11 @@ license = "Apache-2.0"
 [tool.poetry.dependencies]
 python = "^3.8"
 requests = "^2.23.0"
-nornir = { version = "~3", allow-prereleases = true }
+nornir = { version = "~3" }
 
 [tool.poetry.dev-dependencies]
 black = { version = "19.10b0", allow-prereleases = true }
-mypy = "*"
+mypy = "0.782"
 pylama = "^7.7.1"
 pytest = "*"
 pytest-coverage = "^0.0"
